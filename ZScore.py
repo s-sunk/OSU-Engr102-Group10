@@ -31,7 +31,7 @@ population3 = [125, 475, 275, 550, 350, 325, 575,
                600, 625, 675, 250, 100, 0, 375, 
                500, 400, 450, 300, 525, 50, 200]
 
-# Third data set: a list of same integers (not normal distribution)
+# Fourth data set: a list of same integers (not normal distribution which cause standard deviation to be 0)
 population4 = [125, 125, 125, 125, 125, 125, 125, 
                125, 125, 125, 125, 125, 125, 125, 
                125, 125, 125, 125, 125, 125, 125, 
