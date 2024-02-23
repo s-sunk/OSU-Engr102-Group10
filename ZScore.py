@@ -31,6 +31,12 @@ population3 = [125, 475, 275, 550, 350, 325, 575,
                600, 625, 675, 250, 100, 0, 375, 
                500, 400, 450, 300, 525, 50, 200]
 
+# Third data set: a list of same integers (not normal distribution)
+population4 = [125, 125, 125, 125, 125, 125, 125, 
+               125, 125, 125, 125, 125, 125, 125, 
+               125, 125, 125, 125, 125, 125, 125, 
+               125, 125, 125, 125, 125, 125, 125]
+
 #################
 #  FUNCTIONS    #
 #################
@@ -108,6 +114,12 @@ def z_score(x, mu, sigma):
     # Participating group members: Kevin Sun, Erick Moyano, Zachary Van Dyke.
     
     # Calculate the z-score for an item x using the mean of the population and the standard deviation of the population
+
+    # Check if the standard deviation is 0 or not, if it is, raise error.
+    if sigma == 0:
+        raise ValueError("Error: Standard Deviation can't be 0.")
+    
+    #If not, calculate by subtracting the value by mean and devide by standard deviation
     z_value = (x - mu) / sigma
 
     return z_value # Return the calculated z-score result by the z_score function
@@ -147,14 +159,18 @@ def my_test_z_score(population):
     print("The z-score of the smallest value of population is", smallest_z_score_p)
 
 
-# test population1 data set
+# test population1 data set, which is not a normal distribution set
 print("=========== Test population1 ===========")
 my_test_z_score(population1)
 
-# test population2 data set
+# test population2 data set, which is a normal distribution set
 print("=========== Test population2 ===========")
 my_test_z_score(population2)
 
-# test population3 data set
+# test population3 data set, which is a normal distribution set
 print("=========== Test population3 ===========")
 my_test_z_score(population3)
+
+# test population4 data set, which is not a normal distribution set, standard deviation is 0, z-score should error out because we can't divide by 0
+print("=========== Test population4 ===========")
+my_test_z_score(population4)
